@@ -1,0 +1,40 @@
+.comics {
+  display: flex;
+  flex-direction: column;
+}
+
+.comicsContainer {
+  align-self: center;
+  width: 60rem;
+  @include mobile {
+    width: 100%;
+    padding-left: 3rem;
+  }
+  @include tablet {
+    width: 100%;
+    padding-left: 3rem;
+  }
+}
+
+.comicsTitle {
+  padding: 3rem 0 1.5rem 0;
+  font-size: 2rem;
+}
+
+.scrollableComics {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 1rem;
+
+  &::-webkit-scrollbar {
+    height: 0.25rem;
+    background-color: $scrollbar;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 0.25rem;
+    background-color: $marvel-red;
+    border-radius: 0;
+  }
+}

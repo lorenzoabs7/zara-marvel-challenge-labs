@@ -1,0 +1,21 @@
+.comic {
+  width: $comic-width;
+  height: auto;
+  gap: 0.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: $bolder;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: $primary;
+  white-space: wrap;
+  text-align: left;
+}
+
+.saleYear {
+  font-size: 0.75rem;
+  line-height: 0.85rem;
+}

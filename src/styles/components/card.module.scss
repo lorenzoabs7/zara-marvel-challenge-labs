@@ -1,0 +1,178 @@
+.card:not(.isMain) {
+  &.isLoading {
+    animation: loadingAnimation 1.5s ease;
+    z-index: 2;
+  }
+  overflow: hidden;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    border-right: $card-cutout solid $secondary;
+    border-top: $card-cutout solid $secondary;
+    border-top-color: inherit;
+    transition: all 0.2s linear;
+  }
+  &:hover {
+    &::before {
+      border: none;
+      transition: all 0.2s linear;
+    }
+    .image {
+      transform: scale(1.1);
+      transition: all 0.2s linear;
+      overflow: hidden;
+      object-position: top center;
+    }
+    .content {
+      background-color: $marvel-red;
+      &::before {
+        top: 100%;
+        height: 50%;
+      }
+    }
+    .favoriteButton.isFavorite {
+      .favoriteIcon {
+        display: none;
+        &__hovered {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .image {
+    position: relative;
+    display: block;
+    width: $card-size;
+    height: $card-size;
+    transform: scale(1);
+    transition: all 0.2s linear;
+  }
+
+  .content {
+    width: $card-size;
+    padding: 1rem 1rem 1.5rem 1rem;
+    position: relative;
+    background-color: $primary;
+    transition: background-color 0.5s ease;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.25rem solid $marvel-red;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -100%;
+      height: 0%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, $marvel-red, $marvel-red);
+      transition: top 0.5s ease;
+    }
+  }
+
+  .name {
+    text-decoration: none;
+    color: $secondary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+
+  .favoriteIcon {
+    width: 0.75rem;
+    height: 0.75rem;
+    display: block;
+    &__hovered {
+      display: none;
+    }
+  }
+}
+
+.favoriteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.card.isMain {
+  height: calc(20rem + 1px);
+  width: 100%;
+  position: relative;
+  background: $primary;
+  color: $secondary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid $accent;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    border-right: $card-cutout-l solid $secondary;
+    border-top: $card-cutout-l solid $secondary;
+    border-top-color: $primary;
+    transition: all 0.2s linear;
+    @include mobile {
+      border-right: $card-cutout solid $secondary;
+      border-top: $card-cutout solid $secondary;
+      border-top-color: $primary;
+    }
+  }
+  @include mobile {
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .image {
+    height: $card-size-l;
+    width: $card-size-l;
+  }
+
+  .contentContainer {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    padding: 0 3rem;
+    gap: 1.5rem;
+    @include mobile {
+      height: 100%;
+      flex-direction: column;
+      padding: 0 10rem;
+    }
+  }
+  .content {
+    width: 100%;
+    display: flex;
+    color: $secondary;
+    justify-content: space-between;
+    @include mobile {
+      height: 100%;
+      padding: 2rem 1rem 0 1rem;
+    }
+  }
+
+  .description {
+    @include mobile {
+      height: 100%;
+      padding: 0 1rem 3rem 1rem;
+    }
+  }
+
+  .favoriteIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: block;
+    &__hovered {
+      display: none;
+    }
+  }
+}

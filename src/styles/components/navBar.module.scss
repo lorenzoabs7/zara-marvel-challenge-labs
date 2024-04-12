@@ -1,0 +1,32 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary;
+  padding: 1rem 3rem;
+  color: $secondary;
+  height: $header-height;
+}
+
+.logo {
+  height: $marvel-logo-height;
+  width: $marvel-logo-width;
+  cursor: pointer;
+}
+
+.favoriteContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  color: $secondary;
+  text-decoration: none;
+}
+
+.favoriteIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
