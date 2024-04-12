@@ -9,10 +9,10 @@ const Comics = ({ comics }: ComicsComponentProps) => {
   return (
     <section className={styles.comics}>
       <div className={styles.comicsContainer}>
-        {!!comics?.length && <h2 className={styles.comicsTitle}>COMICS</h2>}
+        <h2 className={styles.comicsTitle}>COMICS</h2>
 
         <div className={styles.scrollableComics}>
-          {comics?.map((comic) => {
+          {comics?.length ? comics.map((comic) => {
             const { saleYear, title, imagePath } = comic;
 
             return (
@@ -23,7 +23,7 @@ const Comics = ({ comics }: ComicsComponentProps) => {
                 saleYear={saleYear || ""}
               />
             );
-          })}
+          }) : <p>No Comics found for this character</p>}
         </div>
       </div>
     </section>
