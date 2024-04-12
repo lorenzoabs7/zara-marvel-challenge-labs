@@ -9,7 +9,7 @@ const Comics = ({ comics }: ComicsComponentProps) => {
   return (
     <section className={styles.comics}>
       <div className={styles.comicsContainer}>
-        <h2 className={styles.comicsTitle}>COMICS</h2>
+        {!!comics?.length && <h2 className={styles.comicsTitle}>COMICS</h2>}
 
         <div className={styles.scrollableComics}>
           {comics?.map((comic) => {
