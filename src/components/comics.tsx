@@ -23,7 +23,7 @@ const Comics = ({ comics }: ComicsComponentProps) => {
                 saleYear={saleYear || ""}
               />
             );
-          }) : <p>No Comics found for this character</p>}
+          }) : <p>No comics found for this character.</p>}
         </div>
       </div>
     </section>
